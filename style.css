@@ -1,0 +1,326 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+}
+
+/* Main box that expands and compresses */
+.container {
+    position: relative;
+    width: 400px;
+    height: 110px;
+    background: #ffffff;
+    padding: 30px 30px;
+    overflow: hidden;
+    border-radius: 60px;
+    font-family:'Quicksand', sans-serif;
+    box-shadow:  -15px 15px 20px 5px rgba(0, 0, 0, .5);
+    transition: 0.6s ease-out;
+}
+
+/* notFound image */
+.container img {
+    margin-top: 30px;
+}
+
+/* User search box */
+.searchBox {
+    width: 100%;
+    height: min-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 60px;
+    background: #fff;
+    transition: 0.5s ease-out;
+}
+
+/* User typable part of search box */
+.searchBox input {
+    color: #7cb8fd;
+    background: #ffffff;
+    width: 80%;
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding-left: 30px;
+    padding-right: 20px;
+    font-family:'Quicksand', sans-serif;
+    text-align: center;
+}
+
+/* Part that says 'Location' for the user to type on */
+.searchBox input::placeholder {
+    font-size: 24px;
+    font-weight: 500;
+    color: #7cb8fd;
+    text-transform: capitalize;
+    font-family:'Quicksand', sans-serif;
+    text-align: center;
+}
+
+/* Search button */
+.searchBox button {
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    color: #717171;
+    background-color: #ffffff;
+    border-radius: 60px;
+    font-size: 24px;
+    transition: 0.5s ease-out;
+}
+
+/* Location icon (aesthetic purposes) */
+.searchBox location {
+    color: #717171;
+    font-size: 30px;
+    padding-left: 10px;
+}
+
+/* Search button color when hovering on top */
+.searchBox button:hover {
+    color: #ffffff;
+    background-color: #7cb8fd;
+}
+
+/* Top region of weather app. Displays: temperature, high temp, low temp, description, etc. */
+.weatherBox {
+    text-align: center;
+    justify-content: space-between;
+}
+
+/* Image of described weather. E.g. Sun, clouds, rain, etc. */
+.weatherBox img {
+    width: 50%;
+    margin-top: 0px;
+}
+
+/* Actual temperature number of location entered */
+.weatherBox .temperature {
+    position: relative;
+    color: #7cb8fd;
+    font-size: 4rem;
+    font-weight: 800;
+    margin-top: 0px;
+    text-align: center;
+}
+
+/* Degrees symbol for temperature of location */
+.weatherBox .temperature span {
+    position: absolute;
+    margin-left: 0px;
+    font-size: 1.5rem;
+}
+
+/* Alignment for low and high temperature */
+.weatherBox .temperaturemin .weatherBox .temperaturemax {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Adjustments to color and alignment for low temp */
+.weatherBox .temperaturemin {
+    align-items: center;
+    color: #7cb8fd;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 0px;
+    padding-right: 0px;
+}
+
+/* Low temp degree symbol */
+.weatherBox .temperaturemin span {
+    position: absolute;
+    margin-left: 0px;
+    font-size: 0.8rem;
+}
+
+/* Adjustments to color and alignment for high temp */
+.weatherBox .temperaturemax {
+    align-items: center;
+    color: #7cb8fd;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 0px;
+    padding-left: 0px;
+}
+
+/* High temp degree symbol */
+.weatherBox .temperaturemax span {
+    position: absolute;
+    margin-left: 0px;
+    font-size: 0.8rem;
+}
+
+/* Description of the weather. E.g. Scattered Clouds, Fog, Clear, etc. */
+.weatherBox .description {
+    color: #717171;
+    font-size: 18px;
+    font-weight: 800;
+    text-transform: capitalize;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+/* Bottom half of app */
+.weatherDetails {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+/* Alignment of humidity and wind text */
+.weatherDetails .humidity, .weatherDetails .wind, .weatherDetails .pressure, .weatherDetails .feels_like {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    background-color: #f1f1f1;
+    text-transform: capitalize;
+    /* margin-right: auto; */
+}
+
+/* Alignment and back box for humidity */
+.weatherDetails .humidity {
+    padding-left: 20px;
+    padding-right: 31px;
+    justify-content: left;
+    width: initial;
+    border-radius: 20px;
+}
+
+/* Alignment and back box for wind */
+.weatherDetails .wind {
+    padding-left: 20px;
+    padding-right: 10px;
+    justify-content: left;
+    width: initial;
+    border-radius: 20px;
+}
+
+.weatherDetails .pressure {
+    padding-left: 20px;
+    padding-right: 31px;
+    justify-content: left;
+    width: initial;
+    border-radius: 20px;
+}
+
+.weatherDetails .feels_like {
+    padding-left: 20px;
+    padding-right: 10px;
+    justify-content: left;
+    width: initial;
+    border-radius: 20px;
+}
+
+
+/* Humidity and wind symbols */
+.weatherDetails i {
+    color: #7cb8fd;
+    font-size: 30px;
+    margin-right: 10px;
+    position: relative;
+    top: 5px;
+}
+
+/* Text adjustments for humidity and wind */
+.weatherDetails span {
+    color: #717171;
+    font-size: 22px;
+    font-weight: 800;
+    position: relative;
+    top: -7px;
+}
+
+/* Font adjustments to humidity and wind */
+.weatherDetails p {
+    font-family: 'quicksand', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #717171;
+    text-align: left;
+    position: relative;
+    bottom: 17px;
+    right: 45px;
+} 
+
+.weatherDetails .wind p {
+    font-family: 'quicksand', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #717171;
+    text-align: left;
+    position: relative;
+    bottom: 17px;
+    right: 41px;
+} 
+
+.weatherDetails .pressure p {
+    font-family: 'quicksand', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #717171;
+    text-align: left;
+    position: relative;
+    bottom: 17px;
+    right: 43px;
+} 
+
+.weatherDetails .feels_like p {
+    font-family: 'quicksand', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #717171;
+    text-align: left;
+    position: relative;
+    bottom: 17px;
+    right: 30px;
+} 
+
+/* Little hamster not found image adjustments */
+.notFound {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    scale: 1;
+    opacity: 1;
+    display: none;
+}
+
+/* Size of little hamster */
+.notFound img {
+    width: 100%;
+}
+
+/*  */
+.weatherBox, .weatherDetails {
+    scale: 0;
+    opacity: 0;
+}
+
+.fadeIn {
+    animation: 0.5s fadeIn forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}

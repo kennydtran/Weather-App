@@ -11,7 +11,25 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #ffffff;
+    background-image: url("/images/body_bright.png");
+}
+
+.darkmode i {
+    cursor: pointer;
+    font-size: 30px;
+    color: #fff;
+    background-color: transparent;
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    transition: 0.3s ease-out;
+}
+
+.darkmode i:hover {
+    cursor: pointer;
+    display: flex;
+    transform:scale(1.2);
+    background-color: transparent;
 }
 
 /* Main box that expands and compresses */
@@ -42,7 +60,6 @@ body {
     justify-content: space-between;
     border-radius: 60px;
     background: #fff;
-    transition: 0.5s ease-out;
 }
 
 /* User typable part of search box */
@@ -78,11 +95,11 @@ body {
     background-color: #ffffff;
     border-radius: 60px;
     font-size: 24px;
-    transition: 0.5s ease-out;
+    transition: 0.2s ease-in;
 }
 
 /* Location icon (aesthetic purposes) */
-.searchBox location {
+.searchBox i {
     color: #717171;
     font-size: 30px;
     padding-left: 10px;
@@ -90,8 +107,7 @@ body {
 
 /* Search button color when hovering on top */
 .searchBox button:hover {
-    color: #ffffff;
-    background-color: #7cb8fd;
+    transform: scale(1.2);
 }
 
 /* Top region of weather app. Displays: temperature, high temp, low temp, description, etc. */

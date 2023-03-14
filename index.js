@@ -1,8 +1,51 @@
+const body = document.querySelector('body')
 const container = document.querySelector('.container');
 const searchBox = document.querySelector('.searchBox');
 const notFound = document.querySelector('.notFound');
 const weatherBox = document.querySelector('.weatherBox');
 const weatherDetails = document.querySelector('.weatherDetails');
+const darkmode = document.querySelector('.darkmode')
+const toggle = document.getElementById('toggleDark');
+const input = document.querySelector('.searchBox input');
+const i = document.querySelector('.searchBox i');
+const button = document.querySelector('.searchBox button');
+const buttonhover = document.querySelector('.searchBox button:hover');
+
+toggle.addEventListener('click', function() {
+    this.classList.toggle('fa-moon');
+    if(this.classList.toggle('fa-sun')){
+        body.style.backgroundImage = 'url(images/body_bright.png)';
+        body.style.color = 'white';
+        container.style.color = 'white';
+        container.style.background = '#fff';
+        searchBox.style.background = '#fff';
+        input.style.background = '#fff';
+        i.style.color = '#717171';
+        button.style.background = '#fff';
+        button.style.color = '#717171';
+        body.style.transition = '0.5s';
+        searchBox.style.transition = '0.65s';
+        input.style.transition = '0.65s';
+        i.style.transition = '0.65s';
+        button.style.transition = '0.65s';
+        
+
+    } else {
+        body.style.backgroundImage = 'url(images/body_dark.png)';
+        body.style.color = 'white';
+        container.style.background = '#18294f';
+        searchBox.style.background = '#18294f';
+        input.style.background = '#18294f';
+        i.style.color = '#fff';
+        button.style.background = '#18294f';
+        button.style.color = '#fff';
+        body.style.transition = '0.5s';
+        searchBox.style.transition = '0.65s';
+        input.style.transition = '0.65s';
+        i.style.transition = '0.65s';
+        button.style.transition = '0.65s';
+    }
+});
 
 searchBox.addEventListener('click', searchLocation);
 
@@ -12,6 +55,9 @@ searchBox.addEventListener('keydown', function(e) {
         searchLocation();
     }
 });
+
+
+
 
 function searchLocation() {
     //My own API key:

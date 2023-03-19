@@ -9,12 +9,70 @@ const toggle = document.getElementById('toggleDark');
 const input = document.querySelector('.searchBox input');
 const i = document.querySelector('.searchBox i');
 const button = document.querySelector('.searchBox button');
-const buttonhover = document.querySelector('.searchBox button:hover');
+const placeholder = document.getElementById('placeholder');
+const temp = document.querySelector('.weatherBox .temperature');
+const tempmin = document.querySelector('.weatherBox .temperaturemin');
+const tempmax = document.querySelector('.weatherBox .temperaturemax');
+const tempdesc = document.querySelector('.weatherBox .description');
+const weatherDetHum = document.querySelector('.weatherDetails .humidity');
+const weatherDetWind = document.querySelector('.weatherDetails .wind');
+const weatherDetPre = document.querySelector('.weatherDetails .pressure');
+const weatherDetFel = document.querySelector('.weatherDetails .feels_like');
+const notFoundText = document.querySelector('.notFound div');
+const weatherIcon = document.querySelector('.weatherDetails i');
+const weatherIcon2 = document.querySelector('.weatherDetails i2');
+const weatherIcon3 = document.querySelector('.weatherDetails i3');
+const weatherIcon4= document.querySelector('.weatherDetails i4');
+const weatherTextHum = document.querySelector('.weatherDetails p');
+const weatherTextWind = document.querySelector('.weatherDetails .wind p');
+const weatherTextPre = document.querySelector('.weatherDetails .pressure p');
+const weatherTextFel = document.querySelector('.weatherDetails .feels_like p');
+const weatherInfoHum = document.querySelector('.weatherDetails span');
+const weatherInfoWind = document.querySelector('.weatherDetails .wind span');
+const weatherInfoPre = document.querySelector('.weatherDetails .pressure span');
+const weatherInfoFel = document.querySelector('.weatherDetails .feels_like span');
+
+
+
+placeholder.onfocus = function () {
+        if(this.placeholder === 'location') {
+            this.placeholder = '';
+        }
+    };
+
+placeholder.onblur = function () {
+        if(this.placeholder === '') {
+            this.placeholder = 'location';
+        }
+    };
 
 toggle.addEventListener('click', function() {
     this.classList.toggle('fa-moon');
     if(this.classList.toggle('fa-sun')){
-        body.style.backgroundImage = 'url(images/body_bright.png)';
+        body.style.transition = '1s ease-in-out';
+        searchBox.style.transition = '0.4s ease-in-out';
+        input.style.transition = '0.4s ease-in-out';
+        i.style.transition = '0.4s ease-in-out';
+        button.style.transition = '0.4s ease-in-out';
+        temp.style.transition = '0.4s ease-in-out';
+        tempmin.style.transition = '0.4s ease-in-out';
+        tempmax.style.transition = '0.4s ease-in-out';
+        tempdesc.style.transition = '0.4s ease-in-out';
+        weatherDetHum.style.transition = '0.4s ease-in-out';
+        weatherDetWind.style.transition = '0.4s ease-in-out';
+        weatherDetPre.style.transition = '0.4s ease-in-out';
+        weatherDetFel.style.transition = '0.4s ease-in-out';
+        notFoundText.style.transition = '0.4s ease-in-out';
+        weatherIcon.style.transition = '0.4s ease-in-out';
+        weatherIcon2.style.transition = '0.4s ease-in-out';
+        weatherIcon3.style.transition = '0.4s ease-in-out';
+        weatherIcon4.style.transition = '0.4s ease-in-out';
+        weatherTextHum.style.transition = '0.4s ease-in-out';
+        weatherTextWind.style.transition = '0.4s ease-in-out';
+        weatherTextPre.style.transition = '0.4s ease-in-out';
+        weatherTextFel.style.transition = '0.4s ease-in-out';
+
+        body.style.background = 'url(images/body_bright2.png) bottom center fixed';
         body.style.color = 'white';
         container.style.color = 'white';
         container.style.background = '#fff';
@@ -23,15 +81,54 @@ toggle.addEventListener('click', function() {
         i.style.color = '#717171';
         button.style.background = '#fff';
         button.style.color = '#717171';
-        body.style.transition = '0.5s';
-        searchBox.style.transition = '0.65s';
-        input.style.transition = '0.65s';
-        i.style.transition = '0.65s';
-        button.style.transition = '0.65s';
-        
+        input.style.color = '#7cb8fd';
+        temp.style.color = '#7cb8fd';
+        tempmin.style.color = '#7cb8fd';
+        tempmax.style.color = '#7cb8fd';
+        tempdesc.style.color = '#717171';
+        weatherDetHum.style.background = '#e9e9e9';
+        weatherDetWind.style.background = '#e9e9e9';
+        weatherDetPre.style.background = '#e9e9e9';
+        weatherDetFel.style.background = '#e9e9e9';
+        notFoundText.style.color = '#000';
+        weatherIcon.style.color = '#7cb8fd';
+        weatherIcon2.style.color = '#7cb8fd';
+        weatherIcon3.style.color = '#7cb8fd';
+        weatherIcon4.style.color = '#7cb8fd';
+        weatherTextHum.style.color = '#717171';
+        weatherTextWind.style.color = '#717171';
+        weatherTextPre.style.color = '#717171';
+        weatherTextFel.style.color = '#717171';
+        weatherInfoHum.style.color = '#717171';
+        weatherInfoWind.style.color = '#717171';
+        weatherInfoPre.style.color = '#717171';
+        weatherInfoFel.style.color = '#717171';
 
     } else {
-        body.style.backgroundImage = 'url(images/body_dark.png)';
+        body.style.transition = '1s ease-in-out';
+        searchBox.style.transition = '0.4s ease-in-out';
+        input.style.transition = '0.4s ease-in-out';
+        i.style.transition = '0.4s ease-in-out';
+        button.style.transition = '0.4s ease-in-out';
+        temp.style.transition = '0.4s ease-in-out';
+        tempmin.style.transition = '0.4s ease-in-out';
+        tempmax.style.transition = '0.4s ease-in-out';
+        tempdesc.style.transition = '0.4s ease-in-out';
+        weatherDetHum.style.transition = '0.4s ease-in-out';
+        weatherDetWind.style.transition = '0.4s ease-in-out';
+        weatherDetPre.style.transition = '0.4s ease-in-out';
+        weatherDetFel.style.transition = '0.4s ease-in-out';
+        notFoundText.style.transition = '0.4s ease-in-out';
+        weatherIcon.style.transition = '0.4s ease-in-out';
+        weatherIcon2.style.transition = '0.4s ease-in-out';
+        weatherIcon3.style.transition = '0.4s ease-in-out';
+        weatherIcon4.style.transition = '0.4s ease-in-out';
+        weatherTextHum.style.transition = '0.4s ease-in-out';
+        weatherTextWind.style.transition = '0.4s ease-in-out';
+        weatherTextPre.style.transition = '0.4s ease-in-out';
+        weatherTextFel.style.transition = '0.4s ease-in-out';
+        
+        body.style.background = 'url(images/body_dark2.png) no-repeat top center fixed';
         body.style.color = 'white';
         container.style.background = '#18294f';
         searchBox.style.background = '#18294f';
@@ -39,11 +136,29 @@ toggle.addEventListener('click', function() {
         i.style.color = '#fff';
         button.style.background = '#18294f';
         button.style.color = '#fff';
-        body.style.transition = '0.5s';
-        searchBox.style.transition = '0.65s';
-        input.style.transition = '0.65s';
-        i.style.transition = '0.65s';
-        button.style.transition = '0.65s';
+        input.style.color = '#fbe38c';
+        temp.style.color = '#fbe38c';
+        tempmin.style.color = '#fbe38c';
+        tempmax.style.color = '#fbe38c';
+        tempdesc.style.color = '#fff';
+        weatherDetHum.style.background = '#253255';
+        weatherDetWind.style.background = '#253255';
+        weatherDetPre.style.background = '#253255';
+        weatherDetFel.style.background = '#253255';
+        notFoundText.style.color = '#fbe38c';
+        weatherIcon.style.color = '#fbe38c';
+        weatherIcon2.style.color = '#fbe38c';
+        weatherIcon3.style.color = '#fbe38c';
+        weatherIcon4.style.color = '#fbe38c';
+        weatherTextHum.style.color = '#fff';
+        weatherTextWind.style.color = '#fff';
+        weatherTextPre.style.color = '#fff';
+        weatherTextFel.style.color = '#fff';
+        weatherInfoHum.style.color = '#fff';
+        weatherInfoWind.style.color = '#fff';
+        weatherInfoPre.style.color = '#fff';
+        weatherInfoFel.style.color = '#fff';
+
     }
 });
 
@@ -76,11 +191,11 @@ function searchLocation() {
 
         //If user enters inelible location, hamster notFound image will display
         if(json.cod === '404') {
-            container.style.height = '500px';
-            container.style.width = '500px';
+            container.style.height = '450px';
+            container.style.width = '400px';
             weatherBox.style.display = 'none';
             weatherDetails.style.display = 'none';
-            notFound.style.display = 'block';
+            notFound.style.display = 'flex';
             notFound.classList.add('fadeIn');
             return;
         }
@@ -196,9 +311,9 @@ function searchLocation() {
         temperaturemax.innerHTML = `H: ${parseInt(json.main.temp_max)}<span>°</span>`;
         description.innerHTML = `${json.weather[0].description}`;
         humidity.innerHTML = `${json.main.humidity}%`;
-        wind.innerHTML = `${parseInt(json.wind.speed)} mph  |  ${(json.wind.deg)}<span>°</span>`;
+        wind.innerHTML = `${parseInt(json.wind.speed)} mph  |  ${(json.wind.deg)}°`;
         pressure.innerHTML = `${(json.main.pressure)} hPa`;
-        feels_like.innerHTML = `${(json.main.feels_like)}<span>°F</span>`;
+        feels_like.innerHTML = `${(json.main.feels_like)}°F`;
 
         //Animation for entire container. Adjustment to height of container is available here. Width adjustment is also available, just add in: container.style.width = 'px';
         //Maybe increase width in the near future to contain more .weatherDetails because no more room in height.
@@ -207,8 +322,8 @@ function searchLocation() {
         weatherDetails.style.display = '';
         weatherBox.classList.add('fadeIn');
         weatherDetails.classList.add('fadeIn');
-        container.style.height = '800px';
-        container.style.width = '600px';
+        container.style.height = '750px';
+        container.style.width = '520px';
     });
 };
 

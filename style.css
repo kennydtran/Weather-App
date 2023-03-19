@@ -11,7 +11,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("/images/body_bright.png");
+    background: url(images/body_bright2.png) bottom center fixed;
 }
 
 .darkmode i {
@@ -22,7 +22,7 @@ body {
     position: absolute;
     top: 40px;
     right: 30px;
-    transition: 0.3s ease-out;
+    transition: 0.3s ease-in-out;
 }
 
 .darkmode i:hover {
@@ -84,6 +84,7 @@ body {
     text-transform: capitalize;
     font-family:'Quicksand', sans-serif;
     text-align: center;
+    transition: 0.3s ease-in-out;
 }
 
 /* Search button */
@@ -95,7 +96,7 @@ body {
     background-color: #ffffff;
     border-radius: 60px;
     font-size: 24px;
-    transition: 0.2s ease-in;
+    transition: 0.4s ease-in-out;
 }
 
 /* Location icon (aesthetic purposes) */
@@ -205,7 +206,7 @@ body {
     display: flex;
     align-items: center;
     height: 100px;
-    background-color: #f1f1f1;
+    background-color: #e9e9e9;
     text-transform: capitalize;
     /* margin-right: auto; */
 }
@@ -254,8 +255,56 @@ body {
     top: 5px;
 }
 
+.weatherDetails i2 {
+    color: #7cb8fd;
+    font-size: 30px;
+    margin-right: 10px;
+    position: relative;
+    top: 5px;
+}
+
+.weatherDetails i3 {
+    color: #7cb8fd;
+    font-size: 30px;
+    margin-right: 10px;
+    position: relative;
+    top: 5px;
+}
+
+.weatherDetails i4 {
+    color: #7cb8fd;
+    font-size: 30px;
+    margin-right: 10px;
+    position: relative;
+    top: 5px;
+}
+
 /* Text adjustments for humidity and wind */
 .weatherDetails span {
+    color: #717171;
+    font-size: 22px;
+    font-weight: 800;
+    position: relative;
+    top: -7px;
+}
+
+.weatherDetails .wind span {
+    color: #717171;
+    font-size: 22px;
+    font-weight: 800;
+    position: relative;
+    top: -7px;
+}
+
+.weatherDetails .pressure span {
+    color: #717171;
+    font-size: 22px;
+    font-weight: 800;
+    position: relative;
+    top: -7px;
+}
+
+.weatherDetails .feels_like span {
     color: #717171;
     font-size: 22px;
     font-weight: 800;
@@ -299,28 +348,36 @@ body {
 
 .weatherDetails .feels_like p {
     font-family: 'quicksand', sans-serif;
-    font-size: 16px;
+    font-size: 0.8rem;
     font-weight: 500;
     color: #717171;
     text-align: left;
     position: relative;
     bottom: 17px;
     right: 30px;
+    
 } 
 
 /* Little hamster not found image adjustments */
 .notFound {
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
     scale: 1;
     opacity: 1;
-    display: none;
+    display: flex;
+    align-items: center;
 }
 
 /* Size of little hamster */
 .notFound img {
-    width: 100%;
+    max-width: 60%;
+}
+
+.notFound div {
+    font-size: 30px;
+    margin-top: 30px;
+    font-family: 'Times New Roman', sans-serif;
+    font-weight: 800px;
+    padding-left: 10px;
+    color: #000;
 }
 
 /*  */
@@ -333,6 +390,11 @@ body {
     animation: 0.5s fadeIn forwards;
     animation-delay: 0.5s;
 }
+
+.phtransition {
+    transition: all 0.3s ease-in-out;
+}
+
 
 @keyframes fadeIn {
     to {
